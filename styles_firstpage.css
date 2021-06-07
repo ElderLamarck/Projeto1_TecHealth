@@ -1,3 +1,15 @@
 .imagem {
     cursor: pointer;
+    position: relative;
+    top: 130px;
+    margin-left: 10px;
+    left: 500px;
+    align-items: center;
+}
+h1 {
+    position: relative;
+    font-size: 20px;
+    font-family: sans-serif;
+    top: 80px;
+    left: 480px;
 }
