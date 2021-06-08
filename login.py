@@ -1,4 +1,31 @@
 import os, time
+pessoas = dict()
+def Banco_de_dados():
+    lista_bd = list()
+    contador = 0
+    contador_total = 0
+
+    arc_primeiro = open('banco_dados.txt','r',encoding='utf8')
+    for i in arc_primeiro.readlines():
+        lista_bd.append(i)
+
+    while contador_total < len(lista_bd):
+        nome = lista_bd[contador_total]
+        idade = lista_bd[contador_total+1]
+        altura = lista_bd[contador_total+2]
+        peso = lista_bd[contador_total+3]
+        tipo_sanguineo = lista_bd[contador_total+4]
+        alergia = lista_bd[contador_total+5]
+        doencas_base = lista_bd[contador_total+6]
+        historico_cirurgia = lista_bd[contador_total+7]
+        outras_doencas = lista_bd[contador_total+8]
+
+        pessoa = {'nome': nome, 'idade': idade, 'altura': altura, 'peso': peso,
+            'tipo sanguíneo': tipo_sanguineo, 'alergia': alergia, 'doenças base': doencas_base,
+            'historico de cirurgias': historico_cirurgia, 'outras doenças': outras_doencas}
+        pessoas[nome] = pessoa
+
+        contador_total += 9
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 def tradutor():
@@ -26,14 +53,14 @@ def tradutor():
         print()
         print(phrase_str_old)
 def main():
-    pessoas = dict()
+    
     ocupacao = int(input('digite \n 1- profissional \n 2- familiar\n'))
 
     while ocupacao < 1 or ocupacao > 2:
         print('valor não aceito')
         ocupacao = input('digite \n 1- profissional \n 2- familiar\n')
 
-
+    #profissional
     if ocupacao == 1:
         print("Para fazer o login - Digite 1 \nPara criar uma conta - Digite 2")
         login = str(input())
@@ -41,6 +68,7 @@ def main():
             print("parabéns vc está dentro")
         if login == "2":
             print("criando conta...")
+        Banco_de_dados()
 
         while True:
             time.sleep(2)
@@ -93,7 +121,8 @@ def main():
                     print("Doenças base:", pessoa['doenças base'])
                     print("Historico de cirurgias:", pessoa['historico de cirurgias'])
                     print("Outras doenças:", pessoa['outras doenças'])
-                    time.sleep(3)
+
+                    input('\nDigite qualquer coisa para sair: ').upper
                 else:
                     print("Pessoa não encontrada")
 
@@ -145,6 +174,7 @@ def main():
             elif option == -1:
                 break
 
+    #familiar
     elif ocupacao == 2:
         login = str(input("Para fazer o login - Digite 1 \nPara criar uma conta - Digite 2"))
 
