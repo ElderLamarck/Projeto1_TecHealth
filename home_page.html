@@ -8,21 +8,25 @@
   <link rel="stylesheet" href="css/home_page_styles.css">
 </head>
 
+<body>
 <div class="menu">
     <div class="home">
         <img src="fotos/home.png">
         <h2 class="home_menu">Home</h2>
     </div>
     <div class="pacientes">
-        <img src="fotos/user.png">
+        <img src="fotos/user.png" id="user">
         <h2 class="pacientes_menu">Pacientes</h2>
     </div> 
 </div>
 
 <div id="divBusca">
   <input type="text" id="txtBusca" placeholder="Buscar..."/>
-  <img src="fotos/search3.png" id="btnBusca" alt="Buscar"/>
 </div>
+
+<form action="./addpaciente.html">
+  <input type="submit" name="acao" value="Adicionar paciente"/>
+</form>
 
 <table>
   <tr class="menu">
