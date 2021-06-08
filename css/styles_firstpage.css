@@ -1,15 +1,28 @@
-.imagem {
+.imagem_profissional {
     cursor: pointer;
-    position: relative;
-    top: 130px;
-    margin-left: 10px;
-    left: 500px;
+    position: absolute;
+    border-radius: 10px;
+    margin: 30px;
     align-items: center;
+    top: calc(50% - 100px);
+    left: calc(50% - 200px);
+}
+.imagem_familiar {
+    cursor: pointer;
+    position: absolute;
+    border-radius: 10px;
+    margin: 30px;
+    align-items: center;
+    top: calc(50% - 100px);
+    left: calc(50% - 30px);
 }
 h1 {
-    position: relative;
+    position: absolute;
     font-size: 24px;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-    top: 120px;
-    left: 535px;
+    top: calc(50% - 170px);
+    left: calc(50% - 155px);
+}
+.center {
+    margin: auto;
 }
