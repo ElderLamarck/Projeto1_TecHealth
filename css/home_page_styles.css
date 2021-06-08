@@ -125,6 +125,6 @@ form input[type=submit]{
   top: 27px;
   cursor: pointer;
   color: #7BA2F5;
-  border: 1px solid black;
+  border: 1px solid #7BA2F5;
   margin-top: 10px;
 }
