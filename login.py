@@ -1,3 +1,6 @@
+import os, time
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 def tradutor():
     phrase_str_old = input().lower().strip()
     phrase_list = phrase_str_old.split(' ')
@@ -40,6 +43,8 @@ def main():
             print("criando conta...")
 
         while True:
+            time.sleep(2)
+            clear()
             print("\nEscolha uma opção")
             print("1: Listar os pacientes")
             print("2: Cadastrar um paciente")
@@ -88,11 +93,12 @@ def main():
                     print("Doenças base:", pessoa['doenças base'])
                     print("Historico de cirurgias:", pessoa['historico de cirurgias'])
                     print("Outras doenças:", pessoa['outras doenças'])
+                    time.sleep(3)
                 else:
                     print("Pessoa não encontrada")
 
                 print()
-
+                
             # Editar dados
             elif option == 4:
                 nome = input("\nInforme o nome: ").title()
