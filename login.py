@@ -7,13 +7,13 @@ def Banco_de_dados():
 
     arc_primeiro = open('banco_dados.txt','r',encoding='utf8')
     for i in arc_primeiro.read():
-        i = i.replace("'",'').replace('{','').replace('}','').replace('\n',',')
+        i = i.replace("'",'').replace('{','').replace('}','').replace('\n',', ')
         arquivo += i
     lista_tuplas = arquivo.split(',')
     for i in lista_tuplas:
         i = i.split(': ')
-        lista.append(i[1])
-
+        if i[0] != ' ':
+            lista.append(i[1])
     while contador_total < len(lista):
         nome = str(lista[contador_total])
         contador_total += 1
@@ -47,6 +47,8 @@ def Banco_de_dados():
             'historico_de_cirurgias': historico_cirurgia, 'outras_doenças': outras_doencas,
             'rg': rg, 'telefone': telefone, 'setor': setor, 'sus': sus}
         pessoas[nome] = pessoa
+
+        
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -90,15 +92,11 @@ def main():
             print("parabéns vc está dentro")
         if login == "2":
             print("criando conta...")
-
-        try:
-            Banco_de_dados()
-        except:
-            pass
+        Banco_de_dados()     
 
         while True:
             time.sleep(2)
-            clear()
+            #clear()
             print("\nEscolha uma opção")
             print("1: Listar os pacientes")
             print("2: Cadastrar um paciente")
@@ -205,7 +203,7 @@ def main():
             elif option == -1:
                 arc_bd = open('banco_dados.txt','w',encoding='utf8')
                 for i in pessoas.values():
-                    i = str(i)
+                    i = str(i)+' \n'
                     arc_bd.write(i)
                    
                 break
