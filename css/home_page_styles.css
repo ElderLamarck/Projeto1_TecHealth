@@ -2,35 +2,21 @@ table, td {
   padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 5px;
-  position: relative;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .nomes {
   border-bottom: 2px solid rgb(206, 206, 206);
 }
 
-table {
-  width: 80%;
-  border-collapse: collapse;
-  position: relative;
-  margin-top: 2cm;
-  left: 6.5cm;
-}
-
-.menu {
-  padding-top: 10px;
+.cabecalho-tabela {
   background-color: #7BA2F5;
   font-family:'Times New Roman', Times, serif;
-  position: relative;
   font-size: 16px;
-}
-
-div.home {
-  margin: 10px;
-}
-
-div.pacientes {
-  margin: 10px;
 }
 
 .cabeca {
@@ -46,16 +32,24 @@ div.pacientes {
   font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif ;
   font-size: 16px;
   position: relative;
+  border-bottom: 1px solid gray;
+}
+
+div.home {
+  margin-top: 6px;
+  padding: 5px;
+}
+
+div.pacientes {
+  padding: 5px;
 }
 
 h2.home_menu {
   font-size: 18px;
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-  margin-left: 10px;
   margin-right: 1210px;
   cursor: pointer;
-  margin: 10px;
-  display: inline;
+  display: contents;
 }
 
 h2.pacientes_menu {
@@ -66,7 +60,7 @@ h2.pacientes_menu {
   margin-right: 1210px;
   cursor: pointer;
   margin: 10px;
-  display: inline;
+  display: contents;
 }
 
 h2.pacientes_menu:hover{
@@ -76,54 +70,42 @@ h2.pacientes_menu:hover{
 div.menu {
   margin: 0px;
   background-color: white;
-  position: absolute;
-  width: 215px;
-  height: 919px;
-  left: 0px;
-  top: 0px;
   border: 2px solid #AAAAAA;
 }
 
-div.table {
-  top: 40px;
-}
-
-#divBusca{
-  background-color:white;
-  border:solid 1px;
-  border-radius:8px;
-  width:193px;
-  height: 30px;
-  position: relative;
-  top: 70px;
-  left: 270px;
-}
-
-#txtBusca{
-  float:left;
-  background-color:transparent;
-  padding-left:5px;
-  font-style:italic;
-  font-size:15px;
-  border:none;
-  height:27px;
-  width:185px;
-  
-}
-
-#txtBusca:hover{
+form.layout-cabeçalho {
+  width: 250px;
+  margin: auto;
+  margin-top: 65px;
+  margin-left: 270px;
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 5px;
 }
 
-form input[type=submit]{
+input {
+  padding: 6px 10px;
+  border: 0;
+  font-size: 16px;
+}
+
+#search {
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+  float: left;
+  margin-top: 40px;
+}
+
+#redirecionar {
   width: 200px;
   height: 40px;
-  position: relative;
-  left: 1065px;
-  top: 27px;
+  float: right;
+  float: right;
   cursor: pointer;
   color: #7BA2F5;
   border: 2px solid #5486f1;
-  margin-top: 10px;
+  margin-top: 40px;
   border-radius: 5px;
 }
