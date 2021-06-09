@@ -1,31 +1,53 @@
 import os, time
 pessoas = dict()
 def Banco_de_dados():
-    lista_bd = list()
-    contador = 0
+    lista = list()
+    arquivo = ' '
     contador_total = 0
 
     arc_primeiro = open('banco_dados.txt','r',encoding='utf8')
-    for i in arc_primeiro.readlines():
-        lista_bd.append(i)
+    for i in arc_primeiro.read():
+        i = i.replace("'",'').replace('{','').replace('}','').replace('\n',',')
+        arquivo += i
+    lista_tuplas = arquivo.split(',')
+    for i in lista_tuplas:
+        i = i.split(': ')
+        lista.append(i[1])
 
-    while contador_total < len(lista_bd):
-        nome = lista_bd[contador_total]
-        idade = lista_bd[contador_total+1]
-        altura = lista_bd[contador_total+2]
-        peso = lista_bd[contador_total+3]
-        tipo_sanguineo = lista_bd[contador_total+4]
-        alergia = lista_bd[contador_total+5]
-        doencas_base = lista_bd[contador_total+6]
-        historico_cirurgia = lista_bd[contador_total+7]
-        outras_doencas = lista_bd[contador_total+8]
+    while contador_total < len(lista):
+        nome = str(lista[contador_total])
+        contador_total += 1
+        idade = int(lista[contador_total])
+        contador_total += 1
+        altura = float(lista[contador_total])
+        contador_total += 1
+        peso = float(lista[contador_total])
+        contador_total += 1
+        tipo_sanguineo = str(lista[contador_total])
+        contador_total += 1
+        alergia = str(lista[contador_total])
+        contador_total += 1
+        doencas_base = str(lista[contador_total])
+        contador_total += 1
+        historico_cirurgia = str(lista[contador_total])
+        contador_total += 1
+        outras_doencas = str(lista[contador_total])
+        contador_total += 1
+        rg = int(lista[contador_total])
+        contador_total += 1
+        telefone = int(lista[contador_total])
+        contador_total += 1
+        setor = str(lista[contador_total])
+        contador_total += 1
+        sus = int(lista[contador_total])
+        contador_total += 1
 
         pessoa = {'nome': nome, 'idade': idade, 'altura': altura, 'peso': peso,
-            'tipo sanguíneo': tipo_sanguineo, 'alergia': alergia, 'doenças base': doencas_base,
-            'historico de cirurgias': historico_cirurgia, 'outras doenças': outras_doencas}
+            'tipo_sanguíneo': tipo_sanguineo, 'alergia': alergia, 'doenças_base': doencas_base,
+            'historico_de_cirurgias': historico_cirurgia, 'outras_doenças': outras_doencas,
+            'rg': rg, 'telefone': telefone, 'setor': setor, 'sus': sus}
         pessoas[nome] = pessoa
 
-        contador_total += 9
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 def tradutor():
@@ -68,7 +90,11 @@ def main():
             print("parabéns vc está dentro")
         if login == "2":
             print("criando conta...")
-        Banco_de_dados()
+
+        try:
+            Banco_de_dados()
+        except:
+            pass
 
         while True:
             time.sleep(2)
@@ -100,10 +126,16 @@ def main():
                 doencas_base = input("Doenças base: ").capitalize()
                 historico_cirurgia = input("Historico de cirurgias: ").capitalize()
                 outras_doencas = input("Outras doenças: ").capitalize()
+                rg = int(input("Rg: "))
+                telefone = int(input("Telefone: "))
+                setor = str(input("Setor: ")).capitalize()
+                sus = int(input("SUS: "))
+                
 
                 pessoa = {'nome': nome, 'idade': idade, 'altura': altura, 'peso': peso,
-                        'tipo sanguíneo': tipo_sanguineo, 'alergia': alergia, 'doenças base': doencas_base,
-                        'historico de cirurgias': historico_cirurgia, 'outras doenças': outras_doencas}
+                'tipo_sanguíneo': tipo_sanguineo, 'alergia': alergia, 'doenças_1base': doencas_base,
+                'historico_de_cirurgias': historico_cirurgia, 'outras_doenças': outras_doencas,
+                'rg': rg, 'telefone': telefone, 'setor': setor, 'sus': sus}
                 pessoas[nome] = pessoa
 
             # Consultar detalhes
@@ -116,16 +148,15 @@ def main():
                     print("Idade:", pessoa['idade'])
                     print("Altura:", pessoa['altura'])
                     print("Peso:", pessoa['peso'])
-                    print("Tipo sanguíneo:", pessoa['tipo sanguíneo'])
+                    print("Tipo sanguíneo:", pessoa['tipo_sanguíneo'])
                     print("Alergia:", pessoa['alergia'])
-                    print("Doenças base:", pessoa['doenças base'])
-                    print("Historico de cirurgias:", pessoa['historico de cirurgias'])
-                    print("Outras doenças:", pessoa['outras doenças'])
+                    print("Doenças base:", pessoa['doenças_base'])
+                    print("Historico de cirurgias:", pessoa['historico_de_cirurgias'])
+                    print("Outras doenças:", pessoa['outras_doenças'])
 
                     input('\nDigite qualquer coisa para sair: ').upper
                 else:
                     print("Pessoa não encontrada")
-
                 print()
                 
             # Editar dados
@@ -148,11 +179,11 @@ def main():
                     pessoa['idade'] = nova_idade
                     pessoa['altura'] = nova_altura
                     pessoa['peso'] = novo_peso
-                    pessoa['tipo sanguíneo'] = novo_tipo_sanguineo
+                    pessoa['tipo_sanguíneo'] = novo_tipo_sanguineo
                     pessoa['alergia'] = nova_alergia
-                    pessoa['doenças base'] = nova_doenca_base
-                    pessoa['historico de cirurgias'] = novo_historico_cirurgia
-                    pessoa['outras doenças'] = nova_outras_doencas
+                    pessoa['doenças_base'] = nova_doenca_base
+                    pessoa['historico_de_cirurgias'] = novo_historico_cirurgia
+                    pessoa['outras_doenças'] = nova_outras_doencas
                     pessoas[novo_nome] = pessoa
                 else:
                     print("Pessoa não encontrada")
@@ -170,8 +201,13 @@ def main():
                     print("Pessoa não encontrada")
 
                 print()
-
+            #sair
             elif option == -1:
+                arc_bd = open('banco_dados.txt','w',encoding='utf8')
+                for i in pessoas.values():
+                    i = str(i)
+                    arc_bd.write(i)
+                   
                 break
 
     #familiar
