@@ -101,3 +101,7 @@ div.main {
     border: 1px solid #ccc;
     border-top: none;
 }
+
+h3 {
+    margin-left: 700px;
+}

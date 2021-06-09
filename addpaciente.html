@@ -6,6 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles_addpaciente.css">
     <title>Document</title>
+    <script>
+        function showtab(evt, tabname) {
+            var i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(tabname).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </head>
 <body>
 
@@ -27,9 +44,9 @@
     <h1 class="texto_legal">Adicionar paciente</h1>
 
     <div class="main">
-        <button class="tablinks" onclick="openCity(event, 'Dados Gerais')">Dados Gerais</button>
-        <button class="tablinks" onclick="openCity(event, 'Equipe Responsável')">Equipe Responsável</button>
-        <button class="tablinks" onclick="openCity(event, 'Familiar Responsável')">Familiar Responsável</button>
+        <button class="tablinks" onclick="showtab(event, 'Dados Gerais')">Dados Gerais</button>
+        <button class="tablinks" onclick="showtab(event, 'Equipe Responsável')">Equipe Responsável</button>
+        <button class="tablinks" onclick="showtab(event, 'Familiar Responsável')">Familiar Responsável</button>
     </div>
 
     <div id="Dados Gerais" class="tabcontent">
@@ -40,7 +57,7 @@
         <h3>Equipe Responsável</h3>
     </div>
 
-    <div id="Dados Gerais" class="tabcontent">
+    <div id="Familiar Responsável" class="tabcontent">
         <h3>Familiar Responsável</h3>
     </div>
 </body>
