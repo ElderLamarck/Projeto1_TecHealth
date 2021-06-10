@@ -30,7 +30,7 @@ form input[type=password]{
     margin: 15px 0;
 }
 
-form input[type=submit]{
+form input[type=button]{
     width: 50%;
     height: 40px;
     margin-left: 115px;

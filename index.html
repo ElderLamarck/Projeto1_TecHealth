@@ -6,15 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto TecHealth</title>
     <link rel="stylesheet" href="css/styles_index.css">
+    <script src="js/script.js"></script>
+    <script>
+        function autenticar() {
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+            consultaDados("/autenticar", function(dadosValidos) {
+                if (dadosValidos) {
+                    window.location = '/app/home_page.html';
+                } else {
+                    var mensagem = document.getElementById("mensagem");
+                    var texto = document.createTextNode("Dados inválidos");
+                    mensagem.appendChild(texto);
+                    window.setTimeout(function() {
+                        mensagem.removeChild(texto);
+                    }, 5000);
+                }
+            }, {
+                "email": email,
+                "senha": senha
+            })
+        }
+    </script>
 </head>
 <body>
-    <form action="./home_page.html" method="GET">
+    <form>
         <h3>TecHealth</h3>
         <p class="indicadores">Login</p>
         <input id="email" type="text" name="email" placeholder="Informe"/>
         <p class="indicadores">Senha</p>
-        <input type="password" name="senha" placeholder="Informe"/>
-        <input type="submit" name="acao" value="Entrar"/>
+        <input id="senha" type="password" name="senha" placeholder="Informe"/>
+        <input type="button" name="acao" value="Entrar" onclick="autenticar()"/>
+        <br><br>
+        <div id="mensagem" style="color: red; text-align: center;"></div>
     </form>
 </body>
 </html>

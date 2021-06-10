@@ -8,26 +8,28 @@ def send_index():
 
 @app.route('/app/<path:path>')
 def send_static(path):
-    email = request.args.get('email')
-    senha = request.args.get('senha')
+    return send_from_directory('.', path)
+
+@app.route('/autenticar', methods = ['POST'])
+def autenticar():
+    obj = request.get_json()
+    email = obj['email']
+    senha = obj['senha']
     emails_validos = [
-        'dovm@cesar.school'
-        'elgr@cesar.school'
-        'ffcl@cesar.school'
-        'jhcc2@cesar.school'
-        'pevs@cesar.school'
-        'csgg@cesar.school'
-        'mk2@cesar.school'
+        'dovm@cesar.school',
+        'elgr@cesar.school',
+        'ffcl@cesar.school',
+        'jhcc2@cesar.school',
+        'pevs@cesar.school',
+        'csgg@cesar.school',
+        'mk2@cesar.school',
         'mjwps@cesar.school'
     ]
-    if not email is None:
-        email_invalido = email not in emails_validos
-        senha_invalida = senha != '12345'
-        print(senha_invalida)
-        print(email_invalido)
-        if email_invalido or senha_invalida:
-            return send_from_directory('.', 'index.html')    
-    return send_from_directory('.', path)
+    email_invalido = email not in emails_validos
+    senha_invalida = senha != '12345'
+    if email_invalido or senha_invalida:
+        return jsonify(False)
+    return jsonify(True)
 
 @app.route('/pacientes')
 def pacientes():

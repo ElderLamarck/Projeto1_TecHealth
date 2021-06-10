@@ -7,21 +7,10 @@
   <title>Home Page</title>
   <link rel="stylesheet" href="css/home_page_styles.css">
   <link rel="stylesheet" href="css/layout.css">
+  <script src="js/script.js"></script>
   <script>
     function redirecionar() {
       window.location = "./addpaciente.html";
-    }
-    function consultaDados(endpoint, callback) {
-      fetch(endpoint).then(function(response) {
-        var contentType = response.headers.get("content-type");
-        if (contentType && contentType.indexOf("application/json") !== -1) {
-          return response.json().then(function(json) {
-            callback(json);
-          });
-        } else {
-          console.log("Oops, we haven't got JSON!");
-        }
-      });
     }
     function iniciar() {
       consultaDados("/pacientes", function(obj) {
