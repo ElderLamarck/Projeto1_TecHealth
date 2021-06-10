@@ -11,10 +11,53 @@
     function redirecionar() {
       window.location = "./addpaciente.html";
     }
+    function consultaDados(endpoint, callback) {
+      fetch(endpoint).then(function(response) {
+        var contentType = response.headers.get("content-type");
+        if (contentType && contentType.indexOf("application/json") !== -1) {
+          return response.json().then(function(json) {
+            callback(json);
+          });
+        } else {
+          console.log("Oops, we haven't got JSON!");
+        }
+      });
+    }
+    function iniciar() {
+      consultaDados("/pacientes", function(obj) {
+        var tabela = document.getElementById("tabela");
+        for (var i = 0; i < obj.length; i++) {
+          var tr = document.createElement("tr");
+          tr.classList.add("nomes");
+          var tds = [
+            document.createElement("td"),
+            document.createElement("td"),
+            document.createElement("td"),
+            document.createElement("td"),
+            document.createElement("td"),
+            document.createElement("td"),
+          ];
+          for (var t = 0; t < tds.length; t++) {
+            tds[t].classList.add("paciente");
+            tr.appendChild(tds[t]);
+          }
+          tds[0].innerText = i + 1;
+          var a = document.createElement("a");
+          a.href = "dados_paciente.html";
+          a.innerText = obj[i].nome;
+          tds[1].appendChild(a);
+          tds[2].innerText = obj[i].rg;
+          tds[3].innerText = obj[i].telefone;
+          tds[4].innerText = obj[i].setor;
+          tds[5].innerText = obj[i].sus;
+          tabela.appendChild(tr);
+        }
+      })
+    }
   </script>
 </head>
 
-<body>
+<body onload="iniciar()">
   <div class="layout-menu">
       <div class="home">
           <img src="fotos/home.png">
@@ -28,11 +71,11 @@
 
   <div class="layout-cabeçalho">
     <input type="text" name="text" id="search" placeholder="Pesquise">
-    <input type="button" id="redirecionar" name="acao" onclick="redirectionr()" value="Adicionar paciente"/>
+    <input type="button" id="redirecionar" name="acao" onclick="redirecionar()" value="Adicionar paciente"/>
   </div>
 
   <div class="layout-conteudo">
-    <table>
+    <table id="tabela">
       <tr class="cabecalho-tabela">
         <td class="cabeca">#</td>
         <td class="cabeca">Nome</td>
@@ -41,7 +84,7 @@
         <td class="cabeca">Setor</td>
         <td class="cabeca">SUS</td>
       </tr>
-      <tr class="nomes">
+      <!-- <tr class="nomes">
         <td class="paciente">1</td>
         <td class="paciente"><a href="dados_paciente.html">Manuela da Silva</a></td>
         <td class="paciente">9845098487</td>
@@ -120,7 +163,7 @@
         <td class="paciente">(81) 3333-3333</td>
         <td class="paciente">COVID-19</td>
         <td class="paciente">111-2222-3333-4444-5555</td>
-      </tr>
+      </tr> -->
     </table>
   </div>
 </body>

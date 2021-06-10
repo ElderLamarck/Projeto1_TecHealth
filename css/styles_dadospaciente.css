@@ -11,23 +11,22 @@ div.menu {
 }
 
 div.home {
-    margin: 10px;
-}
-
+    margin-top: 6px;
+    padding: 5px;
+  }
+  
 div.pacientes {
-    margin: 10px;
+    padding: 5px;
 }
 
 h2.home_menu {
     font-size: 18px;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-    margin-left: 10px;
     margin-right: 1210px;
     cursor: pointer;
-    margin: 10px;
-    display: inline;
+    display: contents;
 }
-
+  
 h2.pacientes_menu {
     color: black;
     font-size: 18px;
@@ -36,17 +35,18 @@ h2.pacientes_menu {
     margin-right: 1210px;
     cursor: pointer;
     margin: 10px;
-    display: inline;
+    display: contents;
 }
 
-form {
-    width: 250px;
-    margin: auto;
-    margin-top: 65px;
-    margin-left: 270px;
-    border: 2px solid gray;
+#search {
+    width: 200px;
+    border: 2px solid black;
     border-radius: 5px;
-  }
+    margin-top: auto;
+    margin-bottom: auto;
+    float: left;
+    margin-top: 40px;
+}
   
 input {
     padding: 6px 10px;
@@ -57,3 +57,4 @@ input {
 .search {
     width: 92%;
 }
+
