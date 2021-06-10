@@ -23,8 +23,10 @@ def send_static(path):
     if not email is None:
         email_invalido = email not in emails_validos
         senha_invalida = senha != '12345'
+        print(senha_invalida)
+        print(email_invalido)
         if email_invalido or senha_invalida:
-            return send_from_directory('.', 'firstpage.html')    
+            return send_from_directory('.', 'index.html')    
     return send_from_directory('.', path)
 
 @app.route('/pacientes')
@@ -97,6 +99,13 @@ def pacientes():
             'nome': 'Felipe Leão',
             'rg': '9845098487',
             'telefone': '(81) 3333-3333',
+            'setor': 'COVID-19',
+            'sus': '111-2222-3333-4444-5555'
+        },
+        {
+            'nome': 'Desgraça FP',
+            'rg': '6666666666',
+            'telefone': '(81) 6666-6666',
             'setor': 'COVID-19',
             'sus': '111-2222-3333-4444-5555'
         },
