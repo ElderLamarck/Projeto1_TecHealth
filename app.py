@@ -11,7 +11,14 @@ def send_static(path):
     email = request.args.get('email')
     senha = request.args.get('senha')
     emails_validos = [
-        'diegoovmoura@gmail.com'
+        'dovm@cesar.school'
+        'elgr@cesar.school'
+        'ffcl@cesar.school'
+        'jhcc2@cesar.school'
+        'pevs@cesar.school'
+        'csgg@cesar.school'
+        'mk2@cesar.school'
+        'mjwps@cesar.school'
     ]
     if not email is None:
         email_invalido = email not in emails_validos
