@@ -131,7 +131,7 @@ def main():
                 
 
                 pessoa = {'nome': nome, 'idade': idade, 'altura': altura, 'peso': peso,
-                'tipo_sanguíneo': tipo_sanguineo, 'alergia': alergia, 'doenças_1base': doencas_base,
+                'tipo_sanguíneo': tipo_sanguineo, 'alergia': alergia, 'doenças_base': doencas_base,
                 'historico_de_cirurgias': historico_cirurgia, 'outras_doenças': outras_doencas,
                 'rg': rg, 'telefone': telefone, 'setor': setor, 'sus': sus}
                 pessoas[nome] = pessoa
