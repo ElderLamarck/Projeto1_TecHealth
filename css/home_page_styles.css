@@ -47,7 +47,6 @@ div.pacientes {
 h2.home_menu {
   font-size: 18px;
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-  margin-right: 1210px;
   cursor: pointer;
   display: contents;
 }
@@ -57,14 +56,9 @@ h2.pacientes_menu {
   font-size: 18px;
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
   margin-left: 10px;
-  margin-right: 1210px;
-  cursor: pointer;
+
   margin: 10px;
   display: contents;
-}
-
-h2.pacientes_menu:hover{
-  color: #7BA2F5;
 }
 
 div.menu {
@@ -110,6 +104,3 @@ input {
   border-radius: 5px;
 }
 
-.estilo_link {
-
-}

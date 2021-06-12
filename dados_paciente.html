@@ -7,9 +7,21 @@
     <link rel="stylesheet" href="css/styles_dadospaciente.css">
     <link rel="stylesheet" href="css/layout.css">
     <title>Dados do paciente</title>
-    <script></script>
+    <script src="js/script.js"></script>
+    <script>
+        function iniciar() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            consultaDados('/pacientes?id=' + id, function(obj) {
+                var elementoNome = document.getElementById("nome");
+                var elementoRg = document.getElementById("rg");
+                elementoNome.innerText = obj.nome;
+                elementoRg.innerText = "RG: " + obj.rg
+            })
+        }
+    </script>
 </head>
-<body>
+<body onload="iniciar()">
 
     <div class="layout-menu">
         <div class="home">
@@ -18,7 +30,7 @@
         </div>
         <div class="pacientes">
             <img src="fotos/user.png" id="user">
-            <h2 class="pacientes_menu">Pacientes</h2>
+            <a href="home_page.html"><h2 class="pacientes_menu">Pacientes</h2></a>
         </div> 
     </div>
 
@@ -28,7 +40,8 @@
     </div>
 
     <div class="layout-conteudo">
-        amigo estou aqui
+        <h1 id="nome"></h1>
+        <p id="rg"></p>
     </div>
 </body>
 </html>
