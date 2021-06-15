@@ -20,6 +20,7 @@ body {
     top: 0px;
     left: 230px;
     right: 20px;
+    z-index: 900;
 }
 
 .layout-conteudo {
