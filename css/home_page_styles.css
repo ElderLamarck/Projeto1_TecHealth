@@ -84,12 +84,11 @@ input {
 
 #search {
   width: 200px;
-  border: 2px solid black;
+  border: 1px solid gray;
   border-radius: 5px;
-  margin-top: auto;
-  margin-bottom: auto;
   float: left;
   margin-top: 40px;
+  margin-left: 20px;
 }
 
 #redirecionar {
