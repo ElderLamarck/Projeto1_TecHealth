@@ -114,6 +114,8 @@ h3 {
 .RightSide {
     display: grid;
     width: 400px;
+    margin-left: 550px;
+    margin-top: -527px;
 }
 
 .caixaTXT {
@@ -125,4 +127,14 @@ h3 {
 .formulario {
     display: grid;
     width: 400px;
+}
+
+#salvar_paciente_novo {
+    position: relative;
+    right: 250px;
+    top: 5px;
+}
+
+#salvar_paciente_novo:hover{
+    cursor: pointer;
 }
