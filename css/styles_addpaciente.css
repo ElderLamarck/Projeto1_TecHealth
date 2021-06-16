@@ -38,6 +38,14 @@ h2.pacientes_menu {
     display: contents;
 }
 
+#link_pacientes {
+    text-decoration: none;
+}
+
+h2.pacientes_menu:hover {
+    color: rgba(8, 53, 177, 0.856);
+}
+
 #search {
     width: 200px;
     border: 1px solid gray;
@@ -130,10 +138,25 @@ h3 {
 
 #salvar_paciente_novo {
     position: relative;
-    right: 250px;
+    right: 280px;
     top: 5px;
+    border-radius: 10px;
+    background-color: rgb(187, 185, 185);
 }
 
 #salvar_paciente_novo:hover{
     cursor: pointer;
+    color: black;
+    background-color: rgba(8, 53, 177, 0.856);
+}
+
+.salvar_responsavel {
+    border-radius: 10px;
+    background-color: rgb(187, 185, 185);
+}
+
+.salvar_responsavel:hover {
+    cursor: pointer;
+    color: black;
+    background-color: rgba(8, 53, 177, 0.856);
 }

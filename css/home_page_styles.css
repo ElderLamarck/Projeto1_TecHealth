@@ -49,6 +49,11 @@ h2.home_menu {
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
   cursor: pointer;
   display: contents;
+  color: black;
+}
+
+h2.home_menu:hover {
+  color: #5486f1;
 }
 
 h2.pacientes_menu {
@@ -103,3 +108,6 @@ input {
   border-radius: 5px;
 }
 
+#link_index {
+  text-decoration: none;
+}
