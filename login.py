@@ -47,9 +47,6 @@ def Banco_de_dados():
             'historico_de_cirurgias': historico_cirurgia, 'outras_doenças': outras_doencas,
             'rg': rg, 'telefone': telefone, 'setor': setor, 'sus': sus}
         pessoas[nome] = pessoa
-
-        
-
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 def tradutor():
