@@ -9,4 +9,6 @@
 
 > Por fim execute "flask run"
 
-> No terminal copie o link http que aparecerá será algo semelhante a "http://127.0.0.1:5000" caso de ERRO 404 adicione '/app' ao final
+> No terminal copie o link http que aparecerá, será algo semelhante a "http://127.0.0.1:5000" 
+
+> caso de ERRO 404 adicione '/app' ao final
