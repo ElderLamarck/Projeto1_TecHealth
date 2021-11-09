@@ -1,7 +1,7 @@
 # Status Report #03
  
  ### Descrição de como utilizar/ativar o Flask
-> Abra o CMD e vá até o diretorio status-report--03 e execute "venv\Scripts\activate"
+> Abra o CMD e vá até o diretorio Projeto1_TecHealth e execute "venv\Scripts\activate"
 
 > Caso não possua o flask em sua maquina execute "pip install Flask" 
 
